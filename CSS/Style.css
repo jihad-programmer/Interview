@@ -1,0 +1,18 @@
+/* question 6  */
+
+a:hover { color: red; }
+p::first-line { font-weight: bold; }
+
+
+
+/* question 7 */
+
+/* Parent */
+body {
+    color: blue; /* This color will be inherited by child elements */
+}
+
+/* Child */
+h1 {
+    font-size: 3em; /* This will not inherit from the body */
+}

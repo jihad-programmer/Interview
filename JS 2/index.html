@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js 2</title>
+
+</head>
+<body>
+    <div id="colorDiv" style="width: 100px; height: 100px; background-color: lightblue;"></div>
+    <button id="colorButton">Change Color</button>
+
+<!-- Dom question 4   -->
+<ul id="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+<script>
+  document.getElementById('list').addEventListener('click', function(e) {
+    if (e.target.tagName === 'LI') {
+      console.log(e.target.textContent);
+    }
+  });
+</script>
+
+<!-- Dom question 8 -->
+
+<form id="myForm">
+    <input type="text" name="name">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('Form submission prevented');
+    });
+  </script>
+  
+
+
+    
+</body>
+</html>

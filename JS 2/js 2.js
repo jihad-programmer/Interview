@@ -57,3 +57,44 @@ const myPromise = new Promise((resolve, reject) => {
         button.addEventListener('click', function() {
             div.style.backgroundColor = div.style.backgroundColor === 'lightblue' ? 'lightcoral' : 'lightblue';
         });
+
+  //  step 4      
+  // question 1
+
+  fetch('https://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
+
+
+  // question 4
+
+  function convertObject(obj) {
+    // Convert object to JSON
+    let jsonString = JSON.stringify(obj);
+    console.log('JSON:', jsonString);
+  
+    // Convert JSON back to object
+    let parsedObject = JSON.parse(jsonString);
+    console.log('Object:', parsedObject);
+  }
+  
+  convertObject({ name: 'John', age: 30 });
+  
+
+  // question 7
+
+  function navigate(page) {
+    // Change the URL without reloading the page
+    history.pushState({ page: page }, page, `/${page}`);
+    document.getElementById('content').textContent = `You are on the ${page} page`;
+  }
+  
+  window.addEventListener('popstate', (e) => {
+    document.getElementById('content').textContent = `You are on the ${e.state.page} page`;
+  });
+  
+  // Simulate navigation
+  navigate('home');
+  navigate('about');
+  
